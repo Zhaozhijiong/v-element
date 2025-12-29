@@ -1,14 +1,94 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { onMounted, ref } from 'vue';
+import ElButton from './components/ElButton/ElButton.vue';
+import type { ElButtonInstance } from './components/ElButton/types';
+import ElCollapse from './components/ElCollapse/ElCollapse.vue';
+import ElCollapseItem from './components/ElCollapse/ElCollapseItem.vue';
+
+const buttonRef = ref<ElButtonInstance | null>(null)
+onMounted(() => {
+  if (buttonRef.value) {
+    console.log(buttonRef.value.ref)
+  }
+})
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
-
-
+  <view>
+    <ElButton ref="buttonRef" plain @click="123">
+      el-button
+    </ElButton>
+    <ElButton ref="buttonRef" circle>
+      el
+    </ElButton>
+    <ElButton ref="buttonRef" round>
+      el-button
+    </ElButton>
+    <ElButton ref="buttonRef" disabled>
+      el-button
+    </ElButton>
+    <br><br>
+    <ElButton type="primary" ref="buttonRef">
+      el-button
+    </ElButton>
+    <ElButton type="success" ref="buttonRef">
+      el-button
+    </ElButton>
+    <ElButton type="warning" ref="buttonRef">
+      el-button
+    </ElButton>
+    <ElButton type="danger" ref="buttonRef">
+      el-button
+    </ElButton>
+    <ElButton type="info" ref="buttonRef">
+      el-button
+    </ElButton>
+    <br><br>
+    <ElButton type="primary" ref="buttonRef" plain>
+      el-button
+    </ElButton>
+    <ElButton type="success" ref="buttonRef" plain>
+      el-button
+    </ElButton>
+    <ElButton type="warning" ref="buttonRef" plain>
+      el-button
+    </ElButton>
+    <ElButton type="danger" ref="buttonRef" plain>
+      el-button
+    </ElButton>
+    <ElButton type="info" ref="buttonRef" plain>
+      el-button
+    </ElButton>
+    <br><br>
+    <ElButton type="danger" size="large" ref="buttonRef" plain>
+      el-button
+    </ElButton>
+    <ElButton type="info" size="small" ref="buttonRef" plain>
+      el-button
+    </ElButton>
+    <br><br>
+    <ElCollapse>
+      <ElCollapseItem name="a" title="item a">
+        <div>item a aaa aaa</div>
+        <div>item a aaa aaa</div>
+        <div>item a aaa aaa</div>
+      </ElCollapseItem>
+      <ElCollapseItem name="b" title="item b">
+        <div>item b bbb bbb</div>
+        <div>item b bbb bbb</div>
+        <div>item b bbb bbb</div>
+      </ElCollapseItem>
+      <ElCollapseItem name="c">
+        <template #title>
+          item c
+        </template>
+        <div>item c ccc ccc</div>
+        <div>item c ccc ccc</div>
+        <div>item c ccc ccc</div>
+      </ElCollapseItem>
+    </ElCollapse>
+  </view>
 
 </template>
 
-<style scoped></style>
+<style></style>
