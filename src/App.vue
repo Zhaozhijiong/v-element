@@ -5,12 +5,18 @@ import type { ElButtonInstance } from './components/ElButton/types';
 import ElCollapse from './components/ElCollapse/ElCollapse.vue';
 import ElCollapseItem from './components/ElCollapse/ElCollapseItem.vue';
 
+
 const buttonRef = ref<ElButtonInstance | null>(null)
 onMounted(() => {
   if (buttonRef.value) {
     console.log(buttonRef.value.ref)
   }
 })
+
+const openedValue = ref(['a'])
+setTimeout(() => {
+  openedValue.value = ['a', 'b']
+}, 2000)
 </script>
 
 <template>
@@ -67,7 +73,7 @@ onMounted(() => {
       el-button
     </ElButton>
     <br><br>
-    <ElCollapse>
+    <ElCollapse v-model="openedValue" accordion>
       <ElCollapseItem name="a" title="item a">
         <div>item a aaa aaa</div>
         <div>item a aaa aaa</div>
@@ -78,7 +84,7 @@ onMounted(() => {
         <div>item b bbb bbb</div>
         <div>item b bbb bbb</div>
       </ElCollapseItem>
-      <ElCollapseItem name="c">
+      <ElCollapseItem name="c" disabled>
         <template #title>
           item c
         </template>
@@ -87,6 +93,7 @@ onMounted(() => {
         <div>item c ccc ccc</div>
       </ElCollapseItem>
     </ElCollapse>
+    {{ openedValue }}
   </view>
 
 </template>

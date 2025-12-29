@@ -2,3 +2,4 @@
 @import './reset.css';
 
 @import '../components/ElButton/style.css';
+@import '../components/ElCollapse/style.css';
