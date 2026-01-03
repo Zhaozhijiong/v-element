@@ -20,6 +20,10 @@
 import { computed, inject } from 'vue';
 import { collapseContextKey, type ElCollapseItemProps } from './type';
 
+defineOptions({
+  name: 'ElCollapseItem'
+})
+
 const ctx = inject(collapseContextKey)
 
 const props = defineProps<ElCollapseItemProps>()

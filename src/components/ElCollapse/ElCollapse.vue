@@ -8,6 +8,10 @@
 import { provide, ref, watch } from 'vue';
 import { collapseContextKey, type ElCollapseEmits, type ElCollapseProps, type NameType } from './type';
 
+defineOptions({
+  name: 'ElCollapse'
+})
+
 const props = withDefaults(defineProps<ElCollapseProps>(), {
   accordion: false
 })
