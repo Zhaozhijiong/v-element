@@ -87,6 +87,10 @@
     background-color: var(--el-button-disabled-bg-color);
     border-color: var(--el-button-disabled-border-color);
   }
+
+  [class*='el-icon'] + span {
+    margin-left: 6px;
+  }
 }
 
 @each $val in primary, success, warning, danger, info {

@@ -75,6 +75,13 @@ setTimeout(() => {
       el-button
     </ElButton>
     <br><br>
+    <ElButton type="primary" size="large" loading>
+      el-button
+    </ElButton>
+    <ElButton type="info" size="large" icon="arrow-up">
+      el-button
+    </ElButton>
+    <br><br>
     <ElCollapse v-model="openedValue" accordion>
       <ElCollapseItem name="a" title="item a">
         <div>item a aaa aaa</div>
