@@ -4,6 +4,8 @@ import ElButton from './components/ElButton/ElButton.vue';
 import type { ElButtonInstance } from './components/ElButton/types';
 import ElCollapse from './components/ElCollapse/ElCollapse.vue';
 import ElCollapseItem from './components/ElCollapse/ElCollapseItem.vue';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import ElIcon from './components/ElIcon/ElIcon.vue';
 
 
 const buttonRef = ref<ElButtonInstance | null>(null)
@@ -93,7 +95,8 @@ setTimeout(() => {
         <div>item c ccc ccc</div>
       </ElCollapseItem>
     </ElCollapse>
-    {{ openedValue }}
+    <ElIcon icon="fa-solid fa-user-secret" type="success"></ElIcon>
+    <ElIcon icon="fa-solid fa-user-secret" color="#00ffff"></ElIcon>
   </view>
 
 </template>

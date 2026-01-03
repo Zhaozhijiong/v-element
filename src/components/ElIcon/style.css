@@ -1,0 +1,16 @@
+.el-icon {
+  --el-icon-color: inherit;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  fill: currentcolor;
+  color: var(--el-icon-color);
+  font-size: inherit;
+}
+
+@each $val in primary, info, success, warning, danger {
+  .el-icon--$(val) {
+    --el-icon-color: var(--el-color-$(val));
+  }
+}
