@@ -35,6 +35,13 @@
   }
   &.is-active {
     border-bottom-color: transparent;
+
+    .header-angle {
+      transform: rotate(90deg);
+    }
+  }
+  .header-angle {
+    transition: transform var(--el-transition-duration);
   }
 }
 
@@ -51,5 +58,5 @@
 
 .slide-enter-active,
 .slide-leave-active {
-  transition: all 0.3s ease-in-out;
+  transition: all var(--el-transition-duration) ease-in-out;
 }

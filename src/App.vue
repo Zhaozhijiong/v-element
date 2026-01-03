@@ -4,7 +4,6 @@ import ElButton from './components/ElButton/ElButton.vue';
 import type { ElButtonInstance } from './components/ElButton/types';
 import ElCollapse from './components/ElCollapse/ElCollapse.vue';
 import ElCollapseItem from './components/ElCollapse/ElCollapseItem.vue';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import ElIcon from './components/ElIcon/ElIcon.vue';
 
 

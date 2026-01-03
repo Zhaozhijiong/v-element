@@ -1,7 +1,7 @@
 <template>
   <i class="el-icon" :class="{
     [`el-icon--${type}`]: type
-  }" :style="customStyles">
+  }" :style="customStyles" v-bind="$attrs">
     <FontAwesomeIcon v-bind="filterProps"></FontAwesomeIcon>
   </i>
 </template>

@@ -5,6 +5,7 @@
       'is-active': isActive
     }" :id="`item-header-${name}`" @click="handelClick">
       <slot name="title">{{ title }}</slot>
+      <ElIcon icon="angle-right" class="header-angle"></ElIcon>
     </div>
     <Transition name="slide" v-on="transitionEvents">
       <div class="el-collapse-item-wrapper" v-show="isActive">
@@ -19,6 +20,7 @@
 <script setup lang="ts">
 import { computed, inject } from 'vue';
 import { collapseContextKey, type ElCollapseItemProps } from './type';
+import ElIcon from '../ElIcon/ElIcon.vue';
 
 defineOptions({
   name: 'ElCollapseItem'

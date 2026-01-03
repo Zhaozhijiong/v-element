@@ -104,4 +104,8 @@
   --el-disabled-bg-color: var(--el-fill-color-light);
   --el-disabled-text-color: var(--el-text-color-placeholder);
   --el-disabled-border-color: var(--el-border-color-light);
+
+  /* animation */
+  --el-transition-duration: 0.3s;
+  --el-transition-duration-fast: 0.2s;
 }
