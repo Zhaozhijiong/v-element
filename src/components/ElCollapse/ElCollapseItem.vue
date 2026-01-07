@@ -8,7 +8,7 @@
       <ElIcon icon="angle-right" class="header-angle"></ElIcon>
     </div>
     <Transition name="slide" v-on="transitionEvents">
-      <div class="el-collapse-item-wrapper" v-show="isActive">
+      <div class="el-collapse-item__wrapper" v-show="isActive">
         <div class="el-collapse-item__content" :id="`item-header-${name}`">
           <slot></slot>
         </div>

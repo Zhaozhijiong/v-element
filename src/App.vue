@@ -84,20 +84,14 @@ setTimeout(() => {
     <ElCollapse v-model="openedValue" accordion>
       <ElCollapseItem name="a" title="item a">
         <div>item a aaa aaa</div>
-        <div>item a aaa aaa</div>
-        <div>item a aaa aaa</div>
       </ElCollapseItem>
       <ElCollapseItem name="b" title="item b">
-        <div>item b bbb bbb</div>
-        <div>item b bbb bbb</div>
         <div>item b bbb bbb</div>
       </ElCollapseItem>
       <ElCollapseItem name="c" disabled>
         <template #title>
           item c
         </template>
-        <div>item c ccc ccc</div>
-        <div>item c ccc ccc</div>
         <div>item c ccc ccc</div>
       </ElCollapseItem>
     </ElCollapse>

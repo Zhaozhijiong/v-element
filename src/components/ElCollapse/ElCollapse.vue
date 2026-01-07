@@ -23,20 +23,23 @@ watch(() => props.modelValue, (newValue) => {
 })
 
 function handleClickItem(name: NameType) {
+  let _activeNames = [...activeNames.value]
   if (props.accordion) {
-    activeNames.value = [activeNames.value[0] === name ? '' : name]
+    _activeNames = activeNames.value[0] === name ? [] : [name]
+    activeNames.value = _activeNames
   } else {
     const index = activeNames.value.indexOf(name)
     if (index !== -1) {
-      activeNames.value.splice(index, 1)
+      _activeNames.splice(index, 1)
     } else {
-      activeNames.value.push(name)
+      _activeNames.push(name)
     }
+    activeNames.value = _activeNames
   }
 
 
-  emit('update:modelValue', activeNames.value)
-  emit('change', activeNames.value)
+  emit('update:modelValue', _activeNames)
+  emit('change', _activeNames)
 }
 
 provide(collapseContextKey, {
