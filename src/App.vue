@@ -5,9 +5,28 @@ import type { ElButtonInstance } from './components/ElButton/types';
 import ElCollapse from './components/ElCollapse/ElCollapse.vue';
 import ElCollapseItem from './components/ElCollapse/ElCollapseItem.vue';
 import ElIcon from './components/ElIcon/ElIcon.vue';
+import ElTooltip from './components/ElTooltip/ElTooltip.vue';
+import type { ElTooltipInstance } from './components/ElTooltip/type';
 
 
 const buttonRef = ref<ElButtonInstance | null>(null)
+const tooltipRef = ref<ElTooltipInstance | null>(null)
+function openTooltip() {
+  if (tooltipRef.value) {
+    tooltipRef.value.show()
+  }
+}
+
+function closeTooltip() {
+  if (tooltipRef.value) {
+    tooltipRef.value.hide()
+  }
+}
+
+function onVisibleChange() {
+  console.log('change')
+}
+
 onMounted(() => {
   if (buttonRef.value) {
     console.log(buttonRef.value.ref)
@@ -22,10 +41,10 @@ setTimeout(() => {
 
 <template>
   <view>
-    <ElButton ref="buttonRef" plain @click="123">
+    <ElButton ref="buttonRef" plain @click="openTooltip">
       el-button
     </ElButton>
-    <ElButton ref="buttonRef" circle>
+    <ElButton ref="buttonRef" circle @click="closeTooltip">
       el
     </ElButton>
     <ElButton ref="buttonRef" round>
@@ -97,6 +116,17 @@ setTimeout(() => {
     </ElCollapse>
     <ElIcon icon="fa-solid fa-user-secret" type="success"></ElIcon>
     <ElIcon icon="fa-solid fa-user-secret" color="#00ffff"></ElIcon>
+    <br><br>
+    <div>
+      <ElTooltip ref="tooltipRef" placement="right" @visible-change="onVisibleChange">
+        <img src="../public/favicon.ico" alt="">
+        <template #content>
+          <div>
+            这是一段内容
+          </div>
+        </template>
+      </ElTooltip>
+    </div>
   </view>
 
 </template>
