@@ -118,8 +118,8 @@ setTimeout(() => {
     <ElIcon icon="fa-solid fa-user-secret" color="#00ffff"></ElIcon>
     <br><br>
     <div>
-      <ElTooltip ref="tooltipRef" placement="right" @visible-change="onVisibleChange">
-        <img src="../public/favicon.ico" alt="">
+      <ElTooltip ref="tooltipRef" trigger="click" placement="right" @visible-change="onVisibleChange">
+        <ElButton>test</ElButton>
         <template #content>
           <div>
             这是一段内容
