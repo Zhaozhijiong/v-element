@@ -76,8 +76,11 @@ function closeFinal() {
   closeDebounce()
 }
 function togglePopper() {
-  isOpen.value = !isOpen.value
-  emit('visible-change', isOpen.value)
+  if (isOpen.value) {
+    closeFinal()
+  } else {
+    openFinal()
+  }
 }
 function attachEvents() {
   if (props.trigger === 'hover') {
