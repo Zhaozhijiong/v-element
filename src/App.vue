@@ -7,27 +7,21 @@ import ElCollapseItem from './components/ElCollapse/ElCollapseItem.vue';
 import ElIcon from './components/ElIcon/ElIcon.vue';
 import ElTooltip from './components/ElTooltip/ElTooltip.vue';
 import type { ElTooltipInstance } from './components/ElTooltip/type';
+import { ElMessage } from './components/ElMessage/method';
 
 
 const buttonRef = ref<ElButtonInstance | null>(null)
 const tooltipRef = ref<ElTooltipInstance | null>(null)
-function openTooltip() {
-  if (tooltipRef.value) {
-    tooltipRef.value.show()
-  }
-}
-
-function closeTooltip() {
-  if (tooltipRef.value) {
-    tooltipRef.value.hide()
-  }
-}
 
 function onVisibleChange() {
   console.log('change')
 }
 
 onMounted(() => {
+
+  ElMessage({ content: 'this ', type: 'danger', showClose: true })
+  ElMessage({ content: 'this ', duration: 0, type: 'success', showClose: true })
+  ElMessage({ content: 'this ', duration: 0, type: 'warning', showClose: true })
   if (buttonRef.value) {
     console.log(buttonRef.value.ref)
   }
@@ -41,10 +35,10 @@ setTimeout(() => {
 
 <template>
   <view>
-    <ElButton ref="buttonRef" plain @click="openTooltip">
+    <ElButton ref="buttonRef" plain @click="ElMessage({ content: 'this is content' })">
       el-button
     </ElButton>
-    <ElButton ref="buttonRef" circle @click="closeTooltip">
+    <ElButton ref="buttonRef" circle @click="ElMessage({ content: 'this is content123123' })">
       el
     </ElButton>
     <ElButton ref="buttonRef" round>
