@@ -8,6 +8,7 @@ import ElIcon from './components/ElIcon/ElIcon.vue';
 import ElTooltip from './components/ElTooltip/ElTooltip.vue';
 import type { ElTooltipInstance } from './components/ElTooltip/type';
 import { ElMessage } from './components/ElMessage/method';
+import ElInput from './components/ElInput/ElInput.vue';
 
 
 const buttonRef = ref<ElButtonInstance | null>(null)
@@ -31,10 +32,16 @@ const openedValue = ref(['a'])
 setTimeout(() => {
   openedValue.value = ['a', 'b']
 }, 2000)
+
+const inputValue = ref('default')
+setTimeout(() => {
+  inputValue.value = 'update'
+}, 2000)
 </script>
 
 <template>
   <view>
+    <ElInput v-model="inputValue"></ElInput>
     <ElButton ref="buttonRef" plain @click="ElMessage({ content: 'this is content' })">
       el-button
     </ElButton>
